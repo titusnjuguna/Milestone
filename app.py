@@ -14,9 +14,9 @@ from flask_mail import Mail,Message
 
 
 app = Flask(__name__)
-app.secret_key = 'FLASK_APP1_SECRET'
+app.secret_key = os.environ.get('FLASK_APP1_SECRET')
 #configure Database
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://tito:208251001@localhost:5432/Wira_db"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['MAIL_SERVER']= 'smtp.googlemail.com'
 app.config['MAIL_PORT']= 587

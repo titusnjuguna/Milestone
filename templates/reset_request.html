@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;">
+    <form method="POST" enctype="multipart/form-data">
+        {{form.hidden_tag() }}
+        <div class="form-outline mb-4">
+            {{form.email(class ='form-control',placeholder='email',autocomplete='off',autofocus=true)}}
+        </div>
+             
+        
+         <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+            
+                {{form.submit_button(class='btn btn-primary btn-block mb-4')}}
+        
+            </div>
+         </div>
+         {{form.csrf}}
+         
+    
+    </form>
+</div>
+
+{%endblock content%}

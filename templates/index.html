@@ -1,0 +1,23 @@
+{%extends "base.html"%}
+{% block content %}
+<div id="banner">
+  <div id="navbar">
+    <img src="" class="logo">
+    <ul>
+    {%if current_user.is_authenticated%}
+     <li><a href="#">Home</a></li>
+     <li><a href="{{url_for('dashboard')}}">Dashboard</a></li>
+     <li><a href="{{url_for('logout')}}">Logout</a></li>
+     {%else%}
+     <li><a href="{{url_for('register')}}">Register</a></li>
+     <li><a href="{{url_for('login')}}">Login</a></li>
+     {% endif %}
+    </ul>
+  </div>
+ <div id="content">
+   <h1>Welcome to Python BootCamp</h1>
+   <p>This is milestone project to finalize python <br> bootcamp for Lux Academy</p>
+ </div>
+</div>
+{% endblock content%}  
+       
